@@ -1,3 +1,22 @@
+# About This Fork
+
+This is a fork of sgerrand's
+[alpine-pkg-glibc](https://github.com/sgerrand/alpine-pkg-glibc) project with
+minimal changes to build Alpine Linux `glibc` apk packages for the `armhf`
+(`arm32v6`) architecture, which is used by the Raspberry Pi Zero.
+
+The `glibc` binaries used to build the apk packages are built by
+[docker-glibc-armhf-builder](https://github.com/jvasileff/docker-glibc-armhf-builder).
+
+To build, using an Arm based computer:
+
+    echo "_YOUR_RSA_PUBLIC_KEY_" > _YOUR_RSA_KEY_NAME_.rsa.pub
+    export RSA_KEY_PREFIX=_YOUR_RSA_KEY_NAME_
+    export RSA_PRIVATE_KEY=_YOUR_RSA_PRIVATE_KEY_
+    ./build-with-docker.sh
+
+The upstream readme follows:
+
 # alpine-pkg-glibc
 
 [![CircleCI](https://circleci.com/gh/sgerrand/alpine-pkg-glibc/tree/master.svg?style=svg)](https://circleci.com/gh/sgerrand/alpine-pkg-glibc/tree/master) ![x86_64](https://img.shields.io/badge/x86__64-supported-brightgreen.svg)
